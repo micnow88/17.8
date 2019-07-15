@@ -9,14 +9,14 @@ server.on('request', function (request, response) {
     	fs.readFile('./index.html', function(err, data) {
     		response.writeHead(200, {'Content-Type': 'text/html'});
         	response.write(data);
-            return response.end();
+		return response.end();
         });  	
     } else {
         response.statusCode = 404;
         fs.readFile('./404error.jpg', function(err, data) {
     		response.writeHead(200, {'Content-Type': 'image/jpeg'});
         	response.write(data);
-            return response.end();
+            	return response.end();
         });  	
     }
 });
